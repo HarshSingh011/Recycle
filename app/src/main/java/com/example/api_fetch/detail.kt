@@ -12,15 +12,15 @@ class detail : AppCompatActivity() {
         setContentView(R.layout.activity_detail)
 
         val heading = intent.getStringExtra("heading")
-        val newsContent = intent.getStringExtra("newscontent")
+        val carsContent = intent.getStringExtra("carscontent")
         val imageId = intent.getIntExtra("imageId", R.drawable.ast)
 
-        val headingTV = findViewById<TextView>(R.id.newsHeading)
-        val headingIV = findViewById<ImageView>(R.id.newsImage)
-        val newsContentTV = findViewById<TextView>(R.id.newsContent)
+        val headingTV = findViewById<TextView>(R.id.carsHeading)
+        val headingIV = findViewById<ImageView>(R.id.carsImage)
+        val carsContentTV = findViewById<TextView>(R.id.carsContent)
 
         headingTV.text = heading
-        newsContentTV.text = newsContent
+        carsContentTV.text = carsContent
         headingIV.setImageResource(imageId)
     }
 }

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 class FirstPage : AppCompatActivity() {
 
     private val myRecyclerView by lazy { findViewById<RecyclerView>(R.id.recyclerView) }
-    private val newsArrayList by lazy { ArrayList<News>() }
+    private val newsArrayList by lazy { ArrayList<cars>() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,11 +23,11 @@ class FirstPage : AppCompatActivity() {
             R.drawable.far, R.drawable.corvet
         )
 
-        val newsHeadingArray = resources.getStringArray(R.array.news_headings)
-        val newsContentArray = resources.getStringArray(R.array.news_content)
+        val newsHeadingArray = resources.getStringArray(R.array.cars_headings)
+        val newsContentArray = resources.getStringArray(R.array.cars_content)
 
         newsArrayList.addAll(newsImageArray.indices.map { index ->
-            News(newsHeadingArray[index], newsImageArray[index], newsContentArray[index])
+            cars(newsHeadingArray[index], newsImageArray[index], newsContentArray[index])
         })
 
         myRecyclerView.layoutManager = LinearLayoutManager(this)

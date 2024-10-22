@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">CarDet</string>
-    <string-array name="news_headings">
+    <string-array name="cars_headings">
         <item>Aston Martin valkyrie \nPrice:2.5 million dollar</item>
         <item>Mclaren Elva\nPrice:3.1 million dollar</item>
         <item>Lamborghini Huracan\nPrice:4.2 million dollar</item>
@@ -14,7 +14,7 @@
         <item>Corvette Chevrolet\nPrice:2.8 million dollar</item>
     </string-array>
 
-    <string-array name="news_content">
+    <string-array name="cars_content">
         <item>Content 1</item>
         <item>Content 2</item>
         <item>Content 3</item>

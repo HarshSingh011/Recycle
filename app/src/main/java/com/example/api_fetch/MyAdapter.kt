@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.imageview.ShapeableImageView
 
 class MyAdapter(
-        private val newsArrayList: List<News>,
-        private val context: Activity
+    private val carsArrayList: List<cars>,
+    private val context: Activity
     ) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
     private var myListener: onItemClickListener? = null
@@ -29,11 +29,11 @@ class MyAdapter(
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val currentItem = newsArrayList[position]
+        val currentItem = carsArrayList[position]
         holder.bind(currentItem)
     }
 
-    override fun getItemCount(): Int = newsArrayList.size
+    override fun getItemCount(): Int = carsArrayList.size
 
     class MyViewHolder(itemView: View, listener: onItemClickListener?) : RecyclerView.ViewHolder(itemView) {
         private val hTitle: TextView = itemView.findViewById(R.id.headingTitle)
@@ -45,7 +45,7 @@ class MyAdapter(
             }
         }
 
-        fun bind(news: News) {
+        fun bind(news: cars) {
             hTitle.text = news.newsHeading
             hImage.setImageResource(news.newsImage)
         }

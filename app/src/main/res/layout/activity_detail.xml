@@ -9,7 +9,7 @@
 
 
     <ImageView
-        android:id="@+id/newsImage"
+        android:id="@+id/carsImage"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:scaleType="centerCrop"
@@ -18,7 +18,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/newsHeading"
+        android:id="@+id/carsHeading"
         android:textStyle="bold"
         android:textSize="22dp"
         android:gravity="center"
@@ -39,7 +39,7 @@
             android:orientation="vertical"
             android:padding="10dip" >
             <TextView
-                android:id="@+id/newsContent"
+                android:id="@+id/carsContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
