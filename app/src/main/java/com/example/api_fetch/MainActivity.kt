@@ -2,46 +2,31 @@ package com.example.api_fetch
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
-
-    private val myRecyclerView by lazy { findViewById<RecyclerView>(R.id.recyclerView) }
-    private val newsArrayList by lazy { ArrayList<News>() }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        supportActionBar?.hide()
 
-        val newsImageArray = arrayOf(
-            R.drawable.ast, R.drawable.mal, R.drawable.lambo,
-            R.drawable.por, R.drawable.kon, R.drawable.maje
-        )
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
 
-        val newsHeadingArray = resources.getStringArray(R.array.news_headings)
-        val newsContentArray = resources.getStringArray(R.array.news_content)
-
-        newsArrayList.addAll(newsImageArray.indices.map { index ->
-            News(newsHeadingArray[index], newsImageArray[index], newsContentArray[index])
-        })
-
-        myRecyclerView.layoutManager = LinearLayoutManager(this)
-        val myAdapter = MyAdapter(newsArrayList, this)
-        myRecyclerView.adapter = myAdapter
-
-        myAdapter.setOnItemClickListener(object : MyAdapter.onItemClickListener {
-            override fun onItemClicking(position: Int) {
-                val news = newsArrayList[position]
-                val intent = Intent(this@MainActivity, detail::class.java).apply {
-                    putExtra("heading", news.newsHeading)
-                    putExtra("imageId", news.newsImage)
-                    putExtra("newscontent", news.newsContent)
-                }
-                startActivity(intent)
-            }
-        })
+        val loginBtn = findViewById<Button>(R.id.log)
+        loginBtn.setOnClickListener {
+            val intent = Intent(this, FirstPage::class.java)
+            startActivity(intent)
+        }
     }
 }
+
+
+

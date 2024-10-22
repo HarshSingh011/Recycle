@@ -9,9 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.imageview.ShapeableImageView
 
 class MyAdapter(
-    private val newsArrayList: List<News>,
-    private val context: Activity
-) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+        private val newsArrayList: List<News>,
+        private val context: Activity
+    ) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
     private var myListener: onItemClickListener? = null
 
