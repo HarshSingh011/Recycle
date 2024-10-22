@@ -18,7 +18,9 @@ class FirstPage : AppCompatActivity() {
 
         val newsImageArray = arrayOf(
             R.drawable.ast, R.drawable.mal, R.drawable.lambo,
-            R.drawable.por, R.drawable.kon, R.drawable.maje
+            R.drawable.por, R.drawable.kon, R.drawable.maje,
+            R.drawable.pagani, R.drawable.ford, R.drawable.bug,
+            R.drawable.far, R.drawable.corvet
         )
 
         val newsHeadingArray = resources.getStringArray(R.array.news_headings)
